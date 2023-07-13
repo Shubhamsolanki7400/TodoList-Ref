@@ -7,9 +7,27 @@ const TodoList = () => {
   return (
     <>
       <div          
-       className="container" style={{ textAlign: "center" }}>
+       className=
+       
+       
+       
+       
+       
+       
+       
+       
+       "container" style={{ textAlign: "center" }}>
         <div 
         className="row">
+          
+          
+          
+          
+          
+          
+          
+          
+          
           <div className="col-md-12 text-center">
             <h3 className="animate-charcter">TodoList</h3>
           </div>

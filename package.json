@@ -18,8 +18,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
-    
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {
@@ -27,7 +27,13 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
   },
 
   "eslintConfig": {

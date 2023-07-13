@@ -64,12 +64,23 @@ const TodoRef = () => {
         <button className="glow-on-hover" type="button" onClick={HandleADD}>
           ADD TODO
         </button>
-      ) : (
+     
+     
+     
+     
+     
+     ) : (
         <button
           className="glow-on-hover"
           type="button"
+     
+     
+     
           onClick={() => HandleUpdate()}
         >
+     
+     
+     
           Update Value
         </button>
       )}
@@ -99,7 +110,7 @@ const TodoRef = () => {
 
 
 
-              
+
                 className="glow-on-hover"
                 type="button"
                 onClick={() => handleEdit(list, index)}

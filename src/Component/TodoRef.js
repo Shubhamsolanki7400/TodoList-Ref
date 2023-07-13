@@ -79,14 +79,28 @@ const TodoRef = () => {
             <div className="text">
               {list.text}
               <button
-                class="glow-on-hover"
+                className="glow-on-hover"
                 type="button"
                 onClick={() => HandleDelete(index)}
               >
                 Remove
               </button>
               <button
-                class="glow-on-hover"
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+                className="glow-on-hover"
                 type="button"
                 onClick={() => handleEdit(list, index)}
               >

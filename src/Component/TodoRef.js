@@ -10,6 +10,7 @@ const TodoRef = () => {
   const HandleADD = () => {
     if (ref.current.value === '') {
       alert('plz Fill some Data')
+
       settoggleSubmit(true)
     } else {
       console.log(ref.current.value)

@@ -13,6 +13,7 @@ const TodoList = () => {
           </div>
         </div>
       </div>
+
       <myTodo.Provider value={{ todo, setTodo }}>
         <TodoRef />
       </myTodo.Provider>

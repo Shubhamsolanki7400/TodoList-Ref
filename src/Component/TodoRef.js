@@ -1,43 +1,43 @@
-import React, { useContext, useRef, useState } from "react";
-import { myTodo } from "./context";
+import React, { useContext, useRef, useState, useCallback } from 'react'
+import { myTodo } from './context'
 
 const TodoRef = () => {
-  const { todo, setTodo } = useContext(myTodo);
-  const [toggleSubmit, settoggleSubmit] = useState(true);
-  const [editedItem, setEditedItem] = useState(null);
-  const ref = useRef();
-  console.log(todo);
+  const { todo, setTodo } = useContext(myTodo)
+  const [toggleSubmit, settoggleSubmit] = useState(true)
+  const [editedItem, setEditedItem] = useState(null)
+  const ref = useRef()
+  console.log(todo)
   const HandleADD = () => {
-    if (ref.current.value === "") {
-      alert("plz Fill some Data");
-      settoggleSubmit(true);
+    if (ref.current.value === '') {
+      alert('plz Fill some Data')
+      settoggleSubmit(true)
     } else {
-      console.log(ref.current.value);
-      setTodo([...todo, { text: ref.current.value }]);
-      console.log(todo);
-      ref.current.value = "";
+      console.log(ref.current.value)
+      setTodo([...todo, { text: ref.current.value }])
+      console.log(todo)
+      ref.current.value = ''
     }
-  };
+  }
   const HandleDelete = (index) => {
-    console.log(index, "qhgd");
-    const deleteItem = todo.filter((ele, del) => index !== del);
-    setTodo(deleteItem);
-  };
+    console.log(index, 'qhgd')
+    const deleteItem = todo.filter((ele, del) => index !== del)
+    setTodo(deleteItem)
+  }
 
   const HandleUpdate = () => {
-    if (ref.current.value === "") {
-      alert("Please fill in some data");
-      return;
+    if (ref.current.value === '') {
+      alert('Please fill in some data')
+      return
     }
 
-    const updatedTodo = [...todo];
-    updatedTodo[editedItem].text = ref.current.value;
-    console.log(editedItem, "key");
-    setTodo(updatedTodo);
-    ref.current.value = "";
-    setEditedItem(null);
-    settoggleSubmit(true);
-  };
+    const updatedTodo = [...todo]
+    updatedTodo[editedItem].text = ref.current.value
+    console.log(editedItem, 'key')
+    setTodo(updatedTodo)
+    ref.current.value = ''
+    setEditedItem(null)
+    settoggleSubmit(true)
+  }
 
   //  const handleEdit = (index) => {
   //     const newText = prompt('Enter the new text:');
@@ -50,78 +50,41 @@ const TodoRef = () => {
   //   };
 
   const handleEdit = (list, index) => {
-    ref.current.value = list.text;
-    setEditedItem(index);
-    settoggleSubmit(false);
-    ref.current.focus();
-    console.log(ref.current.focus());
-  };
+    ref.current.value = list.text
+    setEditedItem(index)
+    settoggleSubmit(false)
+    ref.current.focus()
+    console.log(ref.current.focus())
+  }
 
   return (
-    <div className="input">
-      <input type="text" ref={ref} />
+    <div className='input'>
+      <input type='text' ref={ref} />
       {toggleSubmit ? (
-        <button className="glow-on-hover" type="button" onClick={HandleADD}>
+        <button className='glow-on-hover' type='button' onClick={HandleADD}>
           ADD TODO
         </button>
-     
-     
-     
-     
-     
-     ) : (
-        <button
-          className="glow-on-hover"
-          type="button"
-     
-     
-     
-          onClick={() => HandleUpdate()}
-        >
-     
-     
-     
+      ) : (
+        <button className='glow-on-hover' type='button' onClick={() => HandleUpdate()}>
           Update Value
         </button>
       )}
       {todo?.map((list, index) => {
         return (
           <div key={index}>
-            <div className="text">
+            <div className='text'>
               {list.text}
-              <button
-                className="glow-on-hover"
-                type="button"
-                onClick={() => HandleDelete(index)}
-              >
+              <button className='glow-on-hover' type='button' onClick={() => HandleDelete(index)}>
                 Remove
               </button>
-              <button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                className="glow-on-hover"
-                type="button"
-                onClick={() => handleEdit(list, index)}
-              >
+              <button className='glow-on-hover' type='button' onClick={() => handleEdit(list, index)}>
                 Edit
               </button>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
-export default TodoRef;
+  )
+}
+export default TodoRef

@@ -1,15 +1,15 @@
-import "./App.css";
-import React from "react";
-import TodoList from "./Component/TodoList";
+import "./App.css"
+import React from "react"
+import TodoList from "./Component/TodoList"
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <>
         <TodoList />
       </>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

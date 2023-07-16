@@ -10,7 +10,7 @@
   "quoteProps": "as-needed",
   "requirePragma": false,
   "semi": false,
-  "singleQuote": true,
+  "doubleQuote": true,
   "trailingComma": "none",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
